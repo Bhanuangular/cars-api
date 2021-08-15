@@ -1,0 +1,44 @@
+
+entity Vehicle { 
+	car  String
+	brand String
+    model  String
+    year Integer
+    color String
+    condition String
+    minorIssues String
+    city  String
+    state String
+    zipcode Integer
+    ownerId Integer
+}
+
+entity Address {
+    line1  String
+    line2  String
+    city String
+    state String
+    country String
+    zipcode Integer
+}
+
+entity UserProfile {
+	firstName String
+    lastName String
+    phoneNumber Integer
+   
+    
+    
+}
+// Set pagination options
+paginate Vehicle, UserProfile with infinite-scroll
+paginate Address with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except UserProfile, Vehicle
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
